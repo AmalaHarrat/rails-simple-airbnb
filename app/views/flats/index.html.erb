@@ -1,0 +1,20 @@
+<h1 class = "text-center m-5">FLATS</h1>
+<div class="container">
+<%= link_to "Create a flat",new_flat_path, class:"btn btn-outline-dark" %>
+  <div class="cards-flat mt-3">
+      <% @flats.each do |flat| %>
+        <%= link_to flat_path(flat) do %>
+            <div class="card-flat mb-3">
+            <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+              <div class="card-flat-infos">
+                <div>
+                  <h2><%= flat.name %></h2>
+                  <p><%=truncate(flat.description, :length => 40)%>See more</p>
+                </div>
+                <h2 class="card-flat-pricing"><%=flat.price_per_night%>$</h2>
+              </div>
+            </div>
+      <% end %>
+      <% end %>
+  </div>
+</div>

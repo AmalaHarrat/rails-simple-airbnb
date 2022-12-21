@@ -1,0 +1,16 @@
+<h1 class = "text-center mt-3 mb-0"><%= @flat.name.upcase %></h1>
+<p class = "text-center mb-5">📍 <%= @flat.adress %></p>
+<div class="container">
+  <div class="cards-flat_s">
+            <div class="card-flat_s mb-3">
+            <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+              <div class="card-flat_s-infos">
+                <div>
+                  <small><%= @flat.description %></small>
+                </div>
+                <h2 class="card-flat_s-pricing"><%=@flat.price_per_night%>$</h2>
+              </div>
+            </div>
+  </div>
+  <%= link_to "Back to all flats",flats_path, class:"btn btn-outline-dark" %>
+</div>
