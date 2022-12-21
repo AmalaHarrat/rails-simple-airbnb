@@ -26,14 +26,21 @@ class FlatsController < ApplicationController
 
   def edit
     # modify a flat w/ view
+    @flat = Flat.find(params[:id])
   end
 
   def update
     # modify a flat no view
+    @flat = Flat.find(params[:id])
+    @flat.update(flats_params)
+    redirect_to flat_path(@flat)
   end
 
   def destroy
     # delete a flat
+    @flat = Flat.find(params[:id])
+    @flat.destroy
+    redirect_to flats_path, status: :see_other
   end
 
   private

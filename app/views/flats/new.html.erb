@@ -1,4 +1,13 @@
-<h1>Create a new Flat</h1>
+<h1 class ="text-center m-3">ADD A NEW FLAT</h1>
 <div class="container">
-
+<%= simple_form_for(@flat) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :adress %>
+  <%= f.input :description %>
+  <%= f.input :price_per_night %>
+    <div class="btn mt-3">
+    <%= f.button :submit, "Create this flat", class:"btn btn-outline-dark" %>
+  <% end %>
+  <%= link_to "Back to all flats",flats_path, class:"btn btn-outline-dark" %>
+  </div>
 </div>
